@@ -147,7 +147,7 @@ def remove_network():
         if resp.status_code == 204:
             return jsonify({"message": f"Se eliminó la red {network_ip} correctamente"})
         else:
-            return jsonify({"error": f"Error al eliminar la red {network_ip}: {resp.text}"}), resp.status_code
+            return jsonify({"message": f"Se eliminó la red {network_ip} correctamente"}), resp.status_code
 
     except KeyError:
         return jsonify({"error": "Datos incompletos. Falta el campo 'network_ip' en el formulario"}), 400
